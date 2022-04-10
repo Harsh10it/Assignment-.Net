@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+
+public class MyStack
+{
+    public static void Main(string[] args)
+    {
+        Stack<int> myStack = new Stack<int>();
+        int c = 0;
+        do
+        {
+            Console.WriteLine("1. Push \n2. Pop\n3. Exit");
+            c = Convert.ToInt32(Console.ReadLine());
+
+            switch (c)
+            {
+
+
+                case 1:
+                    Console.WriteLine("Element to push");
+                    int p = Convert.ToInt32(Console.ReadLine());
+                    myStack.Push(p);
+                    break;
+                case 2:
+                    myStack.Pop();
+                    break;
+                case 3:
+                    Console.WriteLine("Exiting");
+                    break;
+                default:
+                    Console.WriteLine("Invalid response");
+                    break;
+            }
+
+            Console.WriteLine("Number of elements in Stack: {0}", myStack.Count);
+        } while (c != 3);
+
+    }
+}
