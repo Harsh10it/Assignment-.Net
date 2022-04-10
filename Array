@@ -1,0 +1,52 @@
+using System;
+public class SamplesArray1
+{
+
+    public static void Main()
+    {
+
+        // Creates and initializes a new Array.
+         Console.WriteLine("Input size");
+        int s =Convert.ToInt32( Console.ReadLine());
+        Array myArray = Array.CreateInstance(typeof(string), s);
+        Array mArray = Array.CreateInstance(typeof(string), s);
+        Console.WriteLine("Input values");
+
+        for (int i = myArray.GetLowerBound(0); i <= myArray.GetUpperBound(0); i++)
+        {
+            string x = Console.ReadLine();
+            myArray.SetValue(x, i);
+        }
+       
+
+        // Displays the values of the Array.
+        Console.WriteLine("The Array initially contains the following values:");
+        PrintIndexAndValues(myArray);
+
+        // Reverses the sort of the values of the Array.
+        Array.Reverse(myArray);
+
+        // Displays the values of the Array.
+        Console.WriteLine("After reversing:");
+        PrintIndexAndValues(myArray);
+
+        Array.Sort(myArray);
+        Console.WriteLine("After sorting elements by using the default comparer:");
+        PrintIndexAndValues(myArray);
+
+        Array.Copy(myArray, mArray, s);
+        Console.WriteLine("After copying:");
+        PrintIndexAndValues(mArray);
+
+        Console.WriteLine("Array.Clear(myArray, 1, 2)");
+        Array.Clear(myArray, 1,2);
+        PrintIndexAndValues(myArray);
+    }
+
+    public static void PrintIndexAndValues(Array myArray)
+    {
+        for (int i = myArray.GetLowerBound(0); i <= myArray.GetUpperBound(0); i++)
+            Console.WriteLine("\t[{0}]:\t{1}", i, myArray.GetValue(i));
+    }
+}
+
