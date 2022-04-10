@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+
+public class List
+{
+    public static void Main(string[] args)
+    {
+       
+        string[] emp = { "Rahul", "Tarak","Ali" };
+        List<string> Employees = new List<string>(emp);
+        Employees.Add("Pranjal");
+        foreach (string a in Employees)
+        Console.WriteLine(a);
+        Console.WriteLine("Count: " + Employees.Count);
+        int idx = Employees.IndexOf("Pranjal");
+if (idx > 0)
+Console.WriteLine($"Item index in List is: {idx}");
+else
+Console.WriteLine("Item not found");
+      
+    }
+}
